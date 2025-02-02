@@ -26,7 +26,7 @@ SCREENSHOTS:
 
 ![Screenshot 2025-02-02 110548](https://github.com/user-attachments/assets/aa9c19ce-92a1-4bd1-9488-22df4a685e52)
 
--User can use the + button to make new notpads to write on
+-User can use the + button to make new notpads
 
 ![pomodoro](https://github.com/user-attachments/assets/bc4ea637-f225-4d89-ab77-e1273bb06756)
 
