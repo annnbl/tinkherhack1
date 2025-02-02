@@ -4,10 +4,10 @@ Team:
 Ann Maria Noble
 
 Hosted Project Link
-[mention your project hosted project link here]
+https://tinkherhack1-5ggx.vercel.app/
 
 Project Description:
-An interactive study space to help focus when you are feeling distracted. Offering a variety of tools to help 
+An interactive study space to help focus when you are feeling distracted. Offers a variety of tools to help stop procrastination.
 
 The Problem statement:
 How can we help users stay focused during their studies while the internet offers so many distractions?
@@ -15,39 +15,26 @@ How can we help users stay focused during their studies while the internet offer
 The Solution:
 Offer a distraction free user interface having all the necessary tools to help the user avoid unwanted procrastinating. 
 
-
-
 Technical Details
 Technologies/Components Used
 For Software:
+-HTML (frontend)
+-Java Script (backend)
+-CSS (design)
 
-[Languages used]
-[Frameworks used]
-[Libraries used]
-[Tools used]
-For Hardware:
+SCREENSHOTS:
+[notepad](https://github.com/user-attachments/assets/cf62d5ff-7fa8-4494-8136-21a4931d97e5)
 
-[List main components]
-[List specifications]
-[List tools required]
-Implementation
-For Software:
+-User can use the + button to make new notpads to write on
 
-Installation
-[commands]
+![pomodoro](https://github.com/user-attachments/assets/bc4ea637-f225-4d89-ab77-e1273bb06756)
 
-Run
-[commands]
+-User can click the hourglass icon to be routed to a timer used for the pomodoro technique
 
-Project Documentation
-For Software:
+![spotifyembed](https://github.com/user-attachments/assets/137c5612-9a95-4dfb-b79e-bebb9bc4e14d)
 
-Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name) Add caption explaining what this shows
+-User can copy a url of a playlist from Youtube or Spotify and embed it into the website
 
-![Screenshot2](Add screenshot 2 here with proper name) Add caption explaining what this shows
-
-![Screenshot3](Add screenshot 3 here with proper name) Add caption explaining what this shows
 
 Diagrams
 ![Workflow](Add your workflow/architecture diagram here) Add caption explaining your workflow
