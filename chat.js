@@ -1,3 +1,4 @@
+
 let color = document.getElementById('color');
 let createBtn = document.getElementById('createBtn');
 let list = document.getElementById('list');
@@ -62,5 +63,22 @@ document.addEventListener('mouseup', () => {
     note.dom.style.cursor = 'auto';
     note.dom = null;  
 })
+const dialog = document.getElementById('dialog');
+const calendarBtn = document.querySelector('.calendar-btn');
+const closeButton = dialog.querySelector('button');
+
+calendarBtn.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+closeButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    dialog.classList.add('closing');
+
+    setTimeout(() => {
+        dialog.classList.remove('closing');
+        dialog.close();
+    }, 300); // Match the transition duration (0.3s)
+});
 
 
