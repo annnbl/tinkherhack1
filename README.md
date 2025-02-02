@@ -23,6 +23,7 @@ For Software:
 -CSS (design)
 
 SCREENSHOTS:
+
 [notepad](https://github.com/user-attachments/assets/cf62d5ff-7fa8-4494-8136-21a4931d97e5)
 
 -User can use the + button to make new notpads to write on
