@@ -36,8 +36,4 @@ SCREENSHOTS:
 
 -User can copy a url of a playlist from Youtube or Spotify and embed it into the website
 
-Project Demo
-Video
-[Add your demo video link here] Explain what the video demonstrates
-
 
