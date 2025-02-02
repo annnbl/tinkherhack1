@@ -1,5 +1,15 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     { "src": "/pomod", "dest": "/pomod.html" },
     { "src": "/calendar", "dest": "/calendar.html" },
@@ -16,12 +26,10 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "max-age=0, s-maxage=86400" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        { "key": "Cache-Control", "value": "max-age=0, must-revalidate" }
       ]
     }
   ],
-  "env": {
-    "CUSTOM_ENV_VAR": "value_here"
-  }
+  "cleanUrls": true,
+  "trailingSlash": false
 }
