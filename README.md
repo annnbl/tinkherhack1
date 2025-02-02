@@ -24,7 +24,7 @@ For Software:
 
 SCREENSHOTS:
 
-[notepad](https://github.com/user-attachments/assets/cf62d5ff-7fa8-4494-8136-21a4931d97e5)
+![Screenshot 2025-02-02 110548](https://github.com/user-attachments/assets/aa9c19ce-92a1-4bd1-9488-22df4a685e52)
 
 -User can use the + button to make new notpads to write on
 
