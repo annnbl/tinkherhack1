@@ -1,22 +1,21 @@
 FOCUS POINT
 
-Basic Details
-Team Name: [Name]
-Team Members
-Member 1: [Name] - [College]
-Member 2: [Name] - [College]
-Member 3: [Name] - [College]
+Team:
+Ann Maria Noble
+
 Hosted Project Link
 [mention your project hosted project link here]
 
-Project Description
-[2-3 lines about what your project does]
+Project Description:
+An interactive study space to help focus when you are feeling distracted. Offering a variety of tools to help 
 
-The Problem statement
-[What ridiculous problem are you solving?]
+The Problem statement:
+How can we help users stay focused during their studies while the internet offers so many distractions?
 
-The Solution
-[How are you solving it? Keep it fun!]
+The Solution:
+Offer a distraction free user interface having all the necessary tools to help the user avoid unwanted procrastinating. 
+
+
 
 Technical Details
 Technologies/Components Used
@@ -76,7 +75,3 @@ Video
 Additional Demos
 [Add any extra demo materials/links]
 
-Team Contributions
-[Name 1]: [Specific contributions]
-[Name 2]: [Specific contributions]
-[Name 3]: [Specific contributions]
