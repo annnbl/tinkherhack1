@@ -1,3 +1,4 @@
+
 let color = document.getElementById('color');
 let createBtn = document.getElementById('createBtn');
 let list = document.getElementById('list');
@@ -62,5 +63,45 @@ document.addEventListener('mouseup', () => {
     note.dom.style.cursor = 'auto';
     note.dom = null;  
 })
+const dialog = document.getElementById('dialog');
+const calendarBtn = document.querySelector('.calendar-btn');
+const closeButton = dialog.querySelector('button');
+
+calendarBtn.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+closeButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    dialog.classList.add('closing');
+
+    setTimeout(() => {
+        dialog.classList.remove('closing');
+        dialog.close();
+    }, 300); // Match the transition duration (0.3s)
+});
+function embedPlaylist() {
+    let url = document.getElementById('playlistInput').value.trim();
+    let embedUrl = '';
+
+    if (url.includes('youtube.com') || url.includes('youtu.be')) {
+        let videoId = new URL(url).searchParams.get('list');
+        if (videoId) {
+            embedUrl = `https://www.youtube.com/embed/videoseries?list=${videoId}`;
+        } else {
+            alert('Invalid YouTube playlist URL');
+            return;
+        }
+    } else if (url.includes('spotify.com')) {
+        let embedSpotifyUrl = url.replace('open.spotify.com', 'embed.spotify.com').replace('/playlist/', '/embed/playlist/');
+        embedUrl = embedSpotifyUrl;
+    } else {
+        alert('Please enter a valid YouTube or Spotify playlist URL.');
+        return;
+    }
+
+    document.getElementById('playlistEmbed').src = embedUrl;
+    document.getElementById('playlistEmbed').style.display = 'block';
+}
 
 

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Point</title>
+    <link rel="stylesheet" href="focuspoint.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #noteForm {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+            padding: 10px;
+        }
+        .taskbar-btn {
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+        .timer-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+        }
+        dialog {
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .dialog-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .close-btn-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        button {
+            background-color: #ffffff;
+            color: #333;
+            border: 1px solid #ccc;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, border 0.3s;
+            font-weight: bold;
+            outline: none;
+            box-shadow: none;
+        }
+        button:hover {
+            background-color: #f9f9f9;
+            border-color: #bbb;
+        }
+        #playlistInput {
+            width: 100%;
+            max-width: 350px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            text-align: center;
+        }
+        #embedBtn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+            display: block;
+            margin: auto;
+        }
+        #embedBtn:hover {
+            background-color: #0056b3;
+        }
+        #playlistEmbed {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            margin-top: 15px;
+            border: none;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form id="noteForm">
+            <input type="color" id="color" value="#e6b905">
+            <button type="button" id="createBtn">+</button>
+            <button type="button" class="taskbar-btn" onclick="document.getElementById('calendarDialog').showModal();">📅</button>
+            <a target="_blank" href="pomod.html" class="timer-link">⏳</a>
+            <button type="button" class="taskbar-btn" onclick="document.getElementById('playlistDialog').showModal();">🎵</button>
+        </form>
+        <div id="list" class="notes-container"></div>
+        
+        <!-- Calendar Dialog -->
+        <dialog id="calendarDialog">
+            <div class="dialog-content">
+                <iframe src="https://calendar.google.com/calendar/embed?height=400&wkst=1&ctz=Asia%2FKolkata&src=NGQwNzJmZTM0ZWEwMThlOWU0ZWNhNTg5NjMwNGQyNmJlNzM3OTVhZjdmOTYzYzY1N2FhNjU2YjFhMTdiYTQxOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4uaW5kaWFsI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23F6BF26&color=%23D81B60" style="border:solid 1px #777" width="400" height="400"></iframe>
+                <div class="close-btn-container">
+                    <form method="dialog">
+                        <button>X</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+        <!-- Playlist Dialog -->
+        <dialog id="playlistDialog">
+            <div class="dialog-content">
+                <p><strong>Embed a YouTube or Spotify Playlist</strong></p>
+                <input type="text" id="playlistInput" placeholder="Enter YouTube or Spotify playlist URL">
+                <button type="button" id="embedBtn" onclick="embedPlaylist()">+</button>
+                <iframe id="playlistEmbed"></iframe>
+                <div class="close-btn-container">
+                    <form method="dialog">
+                        <button>X</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+    </main>
+    
+    <script src="focuspoint.js"></script>
+    <script>
+        function embedPlaylist() {
+            let url = document.getElementById('playlistInput').value.trim();
+            let embedUrl = '';
+
+            if (url.includes('youtube.com') || url.includes('youtu.be')) {
+                let videoId = new URL(url).searchParams.get('list');
+                if (videoId) {
+                    embedUrl = `https://www.youtube.com/embed/videoseries?list=${videoId}`;
+                } else {
+                    alert('Invalid YouTube playlist URL');
+                    return;
+                }
+            } else if (url.includes('spotify.com')) {
+                let embedSpotifyUrl = url.replace('open.spotify.com', 'embed.spotify.com');
+                embedUrl = embedSpotifyUrl;
+            } else {
+                alert('Please enter a valid YouTube or Spotify playlist URL.');
+                return;
+            }
+
+            document.getElementById('playlistEmbed').src = embedUrl;
+            document.getElementById('playlistEmbed').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
