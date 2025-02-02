@@ -10,13 +10,11 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
-    { "src": "/pomod", "dest": "/pomod.html" },
-    { "src": "/calendar", "dest": "/calendar.html" },
-    { "src": "/playlist", "dest": "/playlist.html" },
-    { "src": "/", "dest": "/index.html" }
-  ],
   "rewrites": [
+    { "source": "/pomod", "destination": "/pomod.html" },
+    { "source": "/calendar", "destination": "/calendar.html" },
+    { "source": "/playlist", "destination": "/playlist.html" },
+    { "source": "/", "destination": "/index.html" },
     { "source": "/api/(.*)", "destination": "/api/index.js" }
   ],
   "redirects": [
