@@ -1,4 +1,4 @@
-
+{
   "version": 2,
   "routes": [
     { "src": "/pomod", "dest": "/pomod.html" },
@@ -11,5 +11,17 @@
   ],
   "redirects": [
     { "source": "/old-route", "destination": "/new-route", "permanent": true }
-  ]
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "max-age=0, s-maxage=86400" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    }
+  ],
+  "env": {
+    "CUSTOM_ENV_VAR": "value_here"
+  }
 }
